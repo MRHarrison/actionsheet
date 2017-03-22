@@ -1,0 +1,23 @@
+<div *ngIf="cheatsheet">
+    <h3>Cheatsheet</h3>
+    <ul class="list compact">
+        <li *ngFor="let list of cheatsheet">
+            <h5 *ngIf="list.title">{{ list.title }}</h5>
+            <p *ngIf="list.description" class="description">{{ list.description }}</p>
+            <ul class="list compact items">
+                <li *ngFor="let item of list.items">
+                    <h5 *ngIf="item.title">{{ item.title }}</h5>
+                    <p *ngIf="item.description" class="description">{{ item.description }}</p>
+                    <ul *ngIf="item.items" class="list items">
+                        <li *ngFor="let childItem of item.items">
+                                {{ childItem }}
+                        </li>
+                    </ul>
+                    <template [ngIf]="!item.items">
+                        {{ item }}
+                    </template>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

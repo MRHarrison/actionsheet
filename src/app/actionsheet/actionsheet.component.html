@@ -1,0 +1,22 @@
+<header class="header-4">
+    <div class="branding">
+         <a href="/" class="nav-link">
+            <clr-icon shape="document"></clr-icon>
+            <span class="title">Action Sheet</span>
+        </a>
+    </div>
+</header>
+<div *ngIf="actionsheet" class="content-container">
+    <div class="row flex-items-xs-center actionsheet">
+        <div class="col-sm-10 project">
+            <h1>{{ actionsheet.project.title }}</h1>
+            <p>{{ actionsheet.project.description }}</p>
+        </div>
+        <div class="col-sm-5 checklist">
+            <app-checklist [checklist]="actionsheet.checklist"></app-checklist>
+        </div>
+        <div class="col-sm-5 cheatsheet">
+            <app-cheatsheet [cheatsheet]="actionsheet.cheatsheet"></app-cheatsheet>
+        </div>
+    </div>
+</div>

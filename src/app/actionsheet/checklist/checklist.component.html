@@ -1,0 +1,28 @@
+<div *ngIf="checklist">
+    <h3>Checklist</h3>
+    <ul class="list-unstyled compact">
+        <li *ngFor="let list of checklist">
+            <h5 *ngIf="list.title">{{ list.title }}</h5>
+            <p *ngIf="list.description" class="description">{{ list.description }}</p>
+            <ul class="list-unstyled compact parent items">
+                <li *ngFor="let item of list.items">
+                    <h5 *ngIf="item.title">{{ item.title }}</h5>
+                    <p *ngIf="item.description" class="description">{{ item.description }}</p>
+                    <ul *ngIf="item.items" class="list-unstyled child items">
+                        <li *ngFor="let childItem of item.items">
+                            <clr-checkbox >
+                                {{ childItem }}
+                            </clr-checkbox>
+                        </li>
+<!--                         <clr-checkbox>
+                            {{ item }}
+                        </clr-checkbox> -->
+                    </ul>
+                    <clr-checkbox *ngIf="!item.items">
+                        {{ item }}
+                    </clr-checkbox>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

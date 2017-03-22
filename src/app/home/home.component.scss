@@ -1,0 +1,35 @@
+@import '../../theme';
+
+body {
+    background-color: #fff;
+}
+
+.main-container {
+    background-color: $blue;
+    height: 360px;
+    text-align: center;
+
+    .doc {
+        margin: 100px auto 0;
+    }
+    .lightning {
+        margin: -44px auto 0;
+    }
+    h1 {
+        color: $white;
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+    p {
+        color: $white;
+        margin-top: 10px;
+    }
+}
+.examples {
+    .actionsheets {
+        text-align: center;
+    }
+}
+.actionsheets {
+    margin-top: 50px;
+}
